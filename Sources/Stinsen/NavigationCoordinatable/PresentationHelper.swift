@@ -2,6 +2,16 @@ import Foundation
 import Combine
 import SwiftUI
 
+extension View {
+    func hideNavBar() -> some View {
+        if #available(iOS 16.0, *) {
+            return AnyView(self.toolbar(.hidden, for: .navigationBar))
+        } else {
+            return AnyView(self.navigationBarHidden(true))
+        }
+    }
+}
+
 final class PresentationHelper<T: NavigationCoordinatable>: ObservableObject {
     private let id: Int
     let navigationStack: NavigationStack<T>
@@ -40,7 +50,7 @@ final class PresentationHelper<T: NavigationCoordinatable>: ObservableObject {
                             view: AnyView(
                                 NavigationView(
                                     content: {
-                                        view.navigationBarHidden(true)
+                                        view.hideNavBar()
                                     }
                                 )
                                 .navigationViewStyle(StackNavigationViewStyle())
@@ -92,7 +102,7 @@ final class PresentationHelper<T: NavigationCoordinatable>: ObservableObject {
                                             #if os(macOS)
                                             view
                                             #else
-                                            view.navigationBarHidden(true)
+                                            view.hideNavBar()
                                             #endif
                                         }
                                     )

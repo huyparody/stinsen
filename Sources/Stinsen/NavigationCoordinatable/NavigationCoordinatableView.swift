@@ -74,6 +74,7 @@ struct NavigationCoordinatableView<T: NavigationCoordinatable>: View {
                     }
                 )
                 .hidden()
+                .hideNavBar()
             )
             .sheet(isPresented: Binding<Bool>.init(get: { () -> Bool in
                 return presentationHelper.presented?.type.isModal == true

@@ -53,7 +53,7 @@ final class PresentationHelper<T: NavigationCoordinatable>: ObservableObject {
                                         view.hideNavBar()
                                     }
                                 )
-                                .navigationViewStyle(StackNavigationViewStyle())
+//                                .navigationViewStyle(StackNavigationViewStyle())
                             ),
                             type: .modal
                         )
@@ -106,7 +106,7 @@ final class PresentationHelper<T: NavigationCoordinatable>: ObservableObject {
                                             #endif
                                         }
                                     )
-                                    .navigationViewStyle(StackNavigationViewStyle())
+//                                    .navigationViewStyle(StackNavigationViewStyle())
                                 ),
                                 type: .fullScreen
                             )

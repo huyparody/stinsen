@@ -11,6 +11,7 @@ public class NavigationViewCoordinator<T: Coordinatable>: ViewWrapperCoordinator
                     view
                         .hideNavBar()
                 }
+                    .hideNavBar()
             )
             #else
             AnyView(
@@ -18,6 +19,7 @@ public class NavigationViewCoordinator<T: Coordinatable>: ViewWrapperCoordinator
                     view
                         .hideNavBar()
                 }
+                    .hideNavBar()
 //                .navigationViewStyle(StackNavigationViewStyle())
             )
             #endif

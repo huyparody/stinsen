@@ -9,14 +9,16 @@ public class NavigationViewCoordinator<T: Coordinatable>: ViewWrapperCoordinator
             AnyView(
                 NavigationView {
                     view
+                        .hideNavBar()
                 }
             )
             #else
             AnyView(
                 NavigationView {
                     view
+                        .hideNavBar()
                 }
-                .navigationViewStyle(StackNavigationViewStyle())
+//                .navigationViewStyle(StackNavigationViewStyle())
             )
             #endif
         }
